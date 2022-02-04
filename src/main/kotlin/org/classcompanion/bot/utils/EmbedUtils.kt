@@ -6,7 +6,7 @@ import java.awt.Color
 
 
 object EmbedUtils {
-	fun basicTextEmbed(title: String, fieldName: String, fieldValue: String, inline: Boolean = true, color: Color = Color.CYAN): MessageEmbed {
+	fun basicTextEmbed(title: String, fieldName: String, fieldValue: String, inline: Boolean = true, color: Color = Color.GREEN): MessageEmbed {
 		val embed = EmbedBuilder()
 		embed.setTitle(title)
 		embed.setColor(color)

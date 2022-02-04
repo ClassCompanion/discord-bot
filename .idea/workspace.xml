@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b1e1d270-6ab7-4e4d-a0f8-9aac29d14a73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/commands/PingCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/commands/PingCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Bot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Bot.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/utils/EmbedUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/utils/EmbedUtils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +113,7 @@
       <workItem from="1643913543865" duration="10000" />
       <workItem from="1643913567758" duration="219000" />
       <workItem from="1643914094013" duration="2637000" />
-      <workItem from="1643986931691" duration="5523000" />
+      <workItem from="1643986931691" duration="9905000" />
     </task>
     <servers />
   </component>
