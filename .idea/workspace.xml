@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1e1d270-6ab7-4e4d-a0f8-9aac29d14a73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Bot.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/commands/PingCommand.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/managers/MessagesManager.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/managers/SlashCommandsManager.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/objects/SlashCommand.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/utils/EmbedUtils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/consoleApp.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consoleApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/consoleApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/commands/PingCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/commands/PingCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/utils/EmbedUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/utils/EmbedUtils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +24,31 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="dev" />
+                    <option name="lastUsedInstant" value="1643992206" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1643992205" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -96,7 +111,7 @@
       <workItem from="1643913543865" duration="10000" />
       <workItem from="1643913567758" duration="219000" />
       <workItem from="1643914094013" duration="2637000" />
-      <workItem from="1643986931691" duration="4713000" />
+      <workItem from="1643986931691" duration="5523000" />
     </task>
     <servers />
   </component>
