@@ -8,6 +8,6 @@ class PingCommand : SlashCommand {
 	override fun executeCommand(event: SlashCommandInteractionEvent?) {
 		event?.deferReply(false)?.queue()
 		val interactionHook = event?.hook
-		interactionHook?.sendMessageEmbeds(EmbedUtils.basicTextEmbed("PONG", "pond", "I pong'd"))?.queue()
+		interactionHook?.sendMessageEmbeds(EmbedUtils.basicImageEmbed("PONG", "pong", "I pong'd", "https://www.kindpng.com/picc/m/122-1224817_pogchamp-png-transparent-png.png"))?.queue()
 	}
 }

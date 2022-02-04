@@ -13,4 +13,12 @@ object EmbedUtils {
 		embed.addField(fieldName, fieldValue, inline)
 		return embed.build()
 	}
+	fun basicImageEmbed(title: String, fieldName: String, fieldValue: String, imageUrl: String, inline: Boolean = true, color: Color = Color.GREEN): MessageEmbed {
+		val embed = EmbedBuilder()
+		embed.setTitle(title)
+		embed.setColor(color)
+		embed.addField(fieldName, fieldValue, inline)
+		embed.setImage(imageUrl)
+		return embed.build()
+	}
 }
