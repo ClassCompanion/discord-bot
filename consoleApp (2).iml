@@ -48,7 +48,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.1" level="project" />
     <orderEntry type="library" name="Maven: io.github.cdimascio:java-dotenv:5.2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.classcompanion:botlib:1.0" level="project" />
+    <orderEntry type="module" module-name="consoleApp" />
     <orderEntry type="library" name="Maven: com.rabbitmq:amqp-client:5.14.1" level="project" />
   </component>
 </module>

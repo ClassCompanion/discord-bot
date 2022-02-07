@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1e1d270-6ab7-4e4d-a0f8-9aac29d14a73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqp_client_5_14_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_classcompanion_botlib_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consoleApp (2).iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/consumes/ToMessageConsume.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/commands/PingCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/commands/PingCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/utils/EmbedUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/utils/EmbedUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consoleApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/consoleApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Bot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Bot.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/managers/MessagesManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/classcompanion/bot/managers/MessagesManager.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,16 +85,9 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.26666668" />
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt (1)">
-    <configuration name="MainKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.classcompanion.bot.MainKt" />
-      <module name="consoleApp" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <option name="MAIN_CLASS_NAME" value="org.classcompanion.bot.MainKt" />
       <module name="consoleApp" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -95,7 +95,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt (1)" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
     </recent_temporary>
@@ -112,7 +111,10 @@
       <workItem from="1643913567758" duration="219000" />
       <workItem from="1643914094013" duration="2637000" />
       <workItem from="1643986931691" duration="9940000" />
-      <workItem from="1644008007118" duration="1068000" />
+      <workItem from="1644008007118" duration="3881000" />
+      <workItem from="1644054941175" duration="1003000" />
+      <workItem from="1644095586122" duration="409000" />
+      <workItem from="1644240944359" duration="2243000" />
     </task>
     <servers />
   </component>
