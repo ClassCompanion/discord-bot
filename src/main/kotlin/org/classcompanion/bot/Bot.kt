@@ -16,8 +16,6 @@ import org.classcompanion.botlib.BotLib
 
 
 class Bot(token: String, guild: String, rabbitmqip: String) {
-	// Managers
-	/*var messagesManager: MessagesManager? = MessagesManager()*/
 	private val slashCommandManager: SlashCommandManager = SlashCommandManager()
 	val jda: JDA
 	init {
