@@ -35,7 +35,7 @@ class Bot(token: String, guild: String, rabbitmqip: String) {
 
 		val bot: BotLib = BotLib(rabbitmqip, guild)
 		val defaultChannel: TextChannel? = jda.getTextChannelById(753495220888535080)
-		bot.setConsume(QuestioningMessageConsume(defaultChannel!!))
+		bot.setConsume(QuestioningMessageConsume(defaultChannel!!, bot))
 		//bot.setConsume(ToMessageConsume(defaultChannel!!))
 	}
 }
