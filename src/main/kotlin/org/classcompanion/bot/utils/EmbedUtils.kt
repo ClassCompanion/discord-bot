@@ -2,7 +2,7 @@ package org.classcompanion.bot.utils
 
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.entities.MessageEmbed
-import org.classcompanion.bot.objects.Questioning
+import org.classcompanion.botlib.objects.Questioning
 import java.awt.Color
 
 

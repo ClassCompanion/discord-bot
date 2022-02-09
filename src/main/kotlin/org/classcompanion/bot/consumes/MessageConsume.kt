@@ -5,7 +5,7 @@ import com.fasterxml.jackson.module.kotlin.readValue
 import com.rabbitmq.client.Delivery
 import net.dv8tion.jda.api.entities.Message
 import net.dv8tion.jda.api.entities.TextChannel
-import org.classcompanion.bot.objects.Questioning
+import org.classcompanion.botlib.objects.Questioning
 import org.classcompanion.bot.utils.EmbedUtils
 import org.classcompanion.botlib.BotLib
 import org.classcompanion.botlib.rabbitmq.OnConsume
