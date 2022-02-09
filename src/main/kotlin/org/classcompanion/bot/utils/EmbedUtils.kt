@@ -1,11 +1,9 @@
 package org.classcompanion.bot.utils
 
-import com.fasterxml.jackson.module.kotlin.*
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.entities.MessageEmbed
 import org.classcompanion.bot.objects.Questioning
 import java.awt.Color
-import java.lang.Error
 
 
 object EmbedUtils {
@@ -14,6 +12,8 @@ object EmbedUtils {
 		embed.setTitle(title)
 		embed.setColor(color)
 		embed.addField(fieldName, fieldValue, inline)
+		embed.setThumbnail("https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
+		embed.setFooter("ClassCompanion", "https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
 		return embed.build()
 	}
 	fun basicImageEmbed(title: String, fieldName: String, fieldValue: String, imageUrl: String, inline: Boolean = true, color: Color = Color.GREEN): MessageEmbed {
@@ -22,6 +22,8 @@ object EmbedUtils {
 		embed.setColor(color)
 		embed.addField(fieldName, fieldValue, inline)
 		embed.setImage(imageUrl)
+		embed.setThumbnail("https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
+		embed.setFooter("ClassCompanion", "https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
 		return embed.build()
 	}
 	fun datesEmbed(q: Questioning, inline: Boolean = false, color: Color = Color.GREEN): MessageEmbed {
