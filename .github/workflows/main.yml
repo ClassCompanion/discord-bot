@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get jar
-        uses: houqp/download-release-assets@v1
+        uses: andy-v-h/get-release-asset-action@v1.1.0
         with:
           repo: ClassCompanion/discord-bot
           match: "classcompanion-discord-bot.jar"
