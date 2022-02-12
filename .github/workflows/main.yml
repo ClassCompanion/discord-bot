@@ -15,12 +15,12 @@ jobs:
         uses: bruceadams/get-release@v1.2.3
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      - name: Docker Push
-        uses: opspresso/action-docker@v0.3.9
+      - name: Build & Push to Docker Hub
+        uses: opspresso/action-docker@master
         with:
           args: --docker
-          env:
-            USERNAME: ${{ secrets.DOCKER_USERNAME }}
-            PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-            TAG_NAME: $env.tag_name
-            BUILDX: "true"
+        env:
+          USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          TAG_NAME: $env.tag_name
+          BUILDX: "true"
