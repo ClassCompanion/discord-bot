@@ -18,6 +18,8 @@ jobs:
         uses: bruceadams/get-release@v1.2.3
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      - name: ls
+        run: ls -la
       - name: Build & Push to Docker Hub
         uses: opspresso/action-docker@master
         with:

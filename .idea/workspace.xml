@@ -88,6 +88,11 @@
     <property name="project.structure.side.proportion" value="0.26666668" />
     <property name="settings.editor.selected.configurable" value="orchideLicense" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.classcompanion.bot.MainKt" />
@@ -136,7 +141,7 @@
       <workItem from="1644685470263" duration="602000" />
       <workItem from="1644689795906" duration="207000" />
       <workItem from="1644699147749" duration="8000" />
-      <workItem from="1644699173221" duration="3980000" />
+      <workItem from="1644699173221" duration="4283000" />
     </task>
     <servers />
   </component>
