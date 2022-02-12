@@ -2,63 +2,49 @@ package org.classcompanion.bot.utils
 
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.entities.MessageEmbed
+import org.classcompanion.botlib.objects.Questioning
 import java.awt.Color
-import java.lang.String
+
 
 object EmbedUtils {
-	/*fun quoteCreatedSuccessfully(): MessageEmbed {
+	fun basicTextEmbed(title: String, fieldName: String, fieldValue: String, inline: Boolean = true, color: Color = Color.GREEN): MessageEmbed {
 		val embed = EmbedBuilder()
-		embed.setTitle("Quote uspešno ustvarjen")
-		embed.setColor(Color.GREEN)
+		embed.setTitle(title)
+		embed.setColor(color)
+		embed.addField(fieldName, fieldValue, inline)
+		embed.setThumbnail("https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
+		embed.setFooter("ClassCompanion", "https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
 		return embed.build()
 	}
-
-	fun noPerm(): MessageEmbed {
+	fun basicImageEmbed(title: String, fieldName: String, fieldValue: String, imageUrl: String, inline: Boolean = true, color: Color = Color.GREEN): MessageEmbed {
 		val embed = EmbedBuilder()
-		embed.setTitle("NAPAKA")
-		embed.setColor(Color.RED)
-		embed.addField("Nimaš dovoljenja za uporabo komande.", "za uporabo moraš biti quoter.", false)
+		embed.setTitle(title)
+		embed.setColor(color)
+		embed.addField(fieldName, fieldValue, inline)
+		embed.setImage(imageUrl)
+		embed.setThumbnail("https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
+		embed.setFooter("ClassCompanion", "https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
 		return embed.build()
 	}
-
-	fun quotes(quotes: ArrayList<Quote?>): MessageEmbed {
+	fun datesEmbed(q: Questioning, inline: Boolean = false, color: Color = Color.GREEN): MessageEmbed {
 		val embed = EmbedBuilder()
-		embed.setColor(Color.GREEN)
-		for (q in quotes) {
-			embed.addField(q.getQuote(), "-" + q.getAuthor().getAsMention().toString() + " " + q.getYear(), false)
+
+		embed.setTitle(q.questioning)
+		embed.setColor(color)
+		for ((datum, list) in q.dates) {
+			var fieldvalue = ""
+			for (userid in list) {
+				fieldvalue = if (fieldvalue == "") {
+					fieldvalue.plus("<@$userid>")
+				} else {
+					fieldvalue.plus(", ").plus("<@$userid>")
+				}
+			}
+			embed.addField(datum, fieldvalue, inline)
 		}
+		embed.setThumbnail("https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
+		embed.setFooter("ClassCompanion", "https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
 		return embed.build()
-	}
 
-	fun noQuotes(): MessageEmbed {
-		val embed = EmbedBuilder()
-		embed.setTitle("Ta uporabnik še nima quotov :confused:")
-		embed.setColor(Color.LIGHT_GRAY)
-		return embed.build()
 	}
-
-	fun userStatistic(statistic: Statistic): MessageEmbed {
-		val embed = EmbedBuilder()
-		embed.setTitle("Statistika uporabnika")
-		embed.setColor(Color.LIGHT_GRAY)
-		embed.addField("Število quotov:", String.valueOf(statistic.getAllQuotes()), true)
-		embed.addField("Odstotek vseh quotov:", statistic.getPercentage() + "%", true)
-		return embed.build()
-	}
-
-	fun quoteStats(): MessageEmbed {
-		val embed = EmbedBuilder()
-		embed.setTitle("Statistika quotov")
-		embed.setColor(Color.LIGHT_GRAY)
-		embed.addField("Število quotov:", String.valueOf(MongoUtils.countAllQuotes()), true)
-		return embed.build()
-	}
-
-	fun iDontWantTo(): MessageEmbed {
-		val embed = EmbedBuilder()
-		embed.setTitle("Nečem")
-		embed.setColor(Color.RED)
-		embed.addField("Nemrem", "Ne bom. Uporabi slash komando.", true)
-		return embed.build()
-	}*/
 }

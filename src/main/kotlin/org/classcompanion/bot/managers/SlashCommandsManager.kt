@@ -14,6 +14,6 @@ class SlashCommandManager : ListenerAdapter() {
 	}
 
 	companion object {
-		private val commands: HashMap<String, SlashCommand> = HashMap<String, SlashCommand>()
+		private val commands: HashMap<String, SlashCommand> = HashMap()
 	}
 }
