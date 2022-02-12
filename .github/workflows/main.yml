@@ -10,7 +10,7 @@ jobs:
         uses: andy-v-h/get-release-asset-action@v1.1.0
         with:
           repo: ClassCompanion/discord-bot
-          match: "classcompanion-discord-bot.jar"
+          match: "classcompanion-discord-bot.jar$"
       - name: Get release tag
         uses: bruceadams/get-release@v1.2.3
         env:
