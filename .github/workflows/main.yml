@@ -1,33 +1,27 @@
-
 name: CI
-
 on:
   release:
-    types: [created]
-
+    types: [ created ]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Get jar
-      uses: houqp/download-release-assets@v1
-      with:
-        repo: ClassCompanion/discord-bot
-        match: "classcompanion-discord-bot.jar"
-
-    - name: Get release tag
-      tag_name: get_release
-      uses: bruceadams/get-release@v1.2.3
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-
-    - name: Docker Push
-      uses: opspresso/action-docker@v0.3.9
-      with:
-          args: --docker
+      - name: Get jar
+        uses: houqp/download-release-assets@v1
+        with:
+          repo: ClassCompanion/discord-bot
+          match: "classcompanion-discord-bot.jar"
+      - name: Get release tag
+        tag_name: get_release
+        uses: bruceadams/get-release@v1.2.3
         env:
-          USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          TAG_NAME: $env.tag_name
-          BUILDX: "true"
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Docker Push
+        uses: opspresso/action-docker@v0.3.9
+        with:
+          args: --docker
+          env:
+            USERNAME: ${{ secrets.DOCKER_USERNAME }}
+            PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+            TAG_NAME: $env.tag_name
+            BUILDX: "true"
