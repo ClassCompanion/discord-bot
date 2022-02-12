@@ -6,11 +6,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Get jar
-        uses: andy-v-h/get-release-asset-action@v1.1.0
+      - name: get jar
+        uses: robinraju/release-downloader@v1.3
         with:
-          repo: ClassCompanion/discord-bot
-          match: "classcompanion-discord-bot.jar$"
+          repository: "ClassCompanion/discord-bot"
+          latest: true
+          fileName: "classcompanion-discord-bot.jar"
+          out-file-path: ""
+          token: ""
       - name: Get release tag
         uses: bruceadams/get-release@v1.2.3
         env:
