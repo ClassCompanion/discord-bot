@@ -16,5 +16,16 @@ jobs:
         repo: ClassCompanion/discord-bot
         match: "classcompanion-discord-bot.jar"
 
-    - name: Build docker image
-      - run: docker build . -t classcompanion/discord-bot
+    - name: Get release tag
+      tag_name: get_release
+      uses: bruceadams/get-release@v1.2.3
+
+    - name: Docker Push
+      uses: opspresso/action-docker@v0.3.9
+      with:
+          args: --docker
+        env:
+          USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          TAG_NAME: $env.tag_name
+          BUILDX: "true"
