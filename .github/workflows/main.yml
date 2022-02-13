@@ -12,20 +12,32 @@ jobs:
           repository: "ClassCompanion/discord-bot"
           latest: true
           fileName: "classcompanion-discord-bot.jar"
-          out-file-path: ""
+          out-file-path: "tobuild/"
           token: ""
       - name: Get release tag
         uses: bruceadams/get-release@v1.2.3
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      - name: ls
-        run: ls -la
-      - name: Build & Push to Docker Hub
-        uses: opspresso/action-docker@master
-        with:
-          args: --docker
+      - name: Docker login
         env:
-          USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          TAG_NAME: ${{ steps.get_release.outputs.tag_name }}
-          BUILDX: "true"
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD : ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - name: Clone repo
+        uses: actions/checkout@v2
+        with:
+          repository: ClassCompanion/discord-bot
+      - name: Copy Dockerfile
+        run: |
+          cp Dockerfile tobuild/Dockerfile
+      - name: docker build
+        env:
+          TAGNAME: ${{ steps.get_release.outputs.tag_name }}
+        run: |
+          docker build tobuild/ --file tobuild/Dockerfile -t classcompanion/discord-bot:$TAGNAME
+      - name: docker push
+        env:
+          TAGNAME: ${{ steps.get_release.outputs.tag_name }}
+        run: |
+          docker push classcompanion/discord-bot:$TAGNAME
