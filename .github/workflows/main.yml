@@ -35,9 +35,12 @@ jobs:
         with:
           repository: ClassCompanion/discord-bot
 
+      - name: ls
+        run: ls -la
+
       - name: Copy Dockerfile
         run: |
-          cp Dockerfile tobuild/
+          cp Dockerfile tobuild/Dockerfile
 
       - name: docker build
         env:
