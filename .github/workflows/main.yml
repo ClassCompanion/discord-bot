@@ -6,8 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: mkdir
-        run: mkdir tobuild
+      - name: ls
+        run: ls -la
 
       - name: get jar
         uses: robinraju/release-downloader@v1.3
@@ -17,6 +17,9 @@ jobs:
           fileName: "classcompanion-discord-bot.jar"
           out-file-path: "tobuild/"
           token: ""
+
+      - name: ls
+        run: ls -la
 
       - name: Get release tag
         uses: bruceadams/get-release@v1.2.3
@@ -38,9 +41,14 @@ jobs:
       - name: ls
         run: ls -la
 
-      - name: Copy Dockerfile
-        run: |
-          cp Dockerfile tobuild/Dockerfile
+      - name: copy Dockerfile
+        uses: canastro/copy-file-action@master
+        with:
+          source: "Dockerfile"
+          target: "tobuild/Dockerfile"
+
+      - name: ls
+        run: ls -la
 
       - name: docker build
         env:
