@@ -40,12 +40,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      - name: Docker login
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD : ${{ secrets.DOCKER_PASSWORD }}
-        run: |
-          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+#      - name: Docker login
+#        env:
+#          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+#          DOCKER_PASSWORD : ${{ secrets.DOCKER_PASSWORD }}
+#        run: |
+#          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
       - name: copy Dockerfile
         uses: canastro/copy-file-action@master
@@ -58,14 +58,25 @@ jobs:
           ls -la
           pwd
 
-      - name: docker build
-        env:
-          TAGNAME: ${{ steps.get_release.outputs.tag_name }}
-        run: |
-          docker build tobuild/ --file tobuild/Dockerfile -t classcompanion/discord-bot:$TAGNAME
+#      - name: docker build
+#        working-directory: "tobuild/"
+#        env:
+#          TAGNAME: ${{ steps.get_release.outputs.tag_name }}
+#        run: |
+#          docker build . -t classcompanion/discord-bot:$TAGNAME
+#
+#      - name: docker push
+#        env:
+#          TAGNAME: ${{ steps.get_release.outputs.tag_name }}
+#        run: |
+#          docker push classcompanion/discord-bot:$TAGNAME
 
-      - name: docker push
+      - name: Docker Build and Push
+        uses: opspresso/action-docker@v0.3.9
+        with:
+          args: --docker
         env:
-          TAGNAME: ${{ steps.get_release.outputs.tag_name }}
-        run: |
-          docker push classcompanion/discord-bot:$TAGNAME
+          USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          TAG_NAME: ${{ steps.get_release.outputs.tag_name }}
+          BUILDX: "true"
