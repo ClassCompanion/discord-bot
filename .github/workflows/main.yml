@@ -78,6 +78,7 @@ jobs:
         env:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          IMAGE_NAME: "classcompanion/discord-bot"
           TAG_NAME: ${{ steps.get_release.outputs.tag_name }}
           BUILD_PATH: "tobuild/"
           BUILDX: "true"
