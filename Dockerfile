@@ -1,6 +1,6 @@
 FROM openjdk:17.0.2-jdk
 
-COPY .github/workflows /app
+COPY . /app
 
 WORKDIR /app
 
