@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ls
-        run: ls -la
+        run: |
+          ls -la
+          pwd
 
       - name: get jar
         uses: robinraju/release-downloader@v1.3
@@ -19,7 +21,9 @@ jobs:
           token: ""
 
       - name: ls
-        run: ls -la
+        run: |
+          ls -la
+          pwd
 
       - name: Get release tag
         uses: bruceadams/get-release@v1.2.3
@@ -39,7 +43,9 @@ jobs:
           repository: ClassCompanion/discord-bot
 
       - name: ls
-        run: ls -la
+        run: |
+          ls -la
+          pwd
 
       - name: copy Dockerfile
         uses: canastro/copy-file-action@master
@@ -48,7 +54,9 @@ jobs:
           target: "../tobuild/Dockerfile"
 
       - name: ls
-        run: ls -la
+        run: |
+          ls -la
+          pwd
 
       - name: docker build
         env:
