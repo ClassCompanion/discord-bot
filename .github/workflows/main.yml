@@ -11,6 +11,16 @@ jobs:
           ls -la
           pwd
 
+      - name: Clone repo
+        uses: actions/checkout@v2
+        with:
+          repository: ClassCompanion/discord-bot
+
+      - name: ls
+        run: |
+          ls -la
+          pwd
+
       - name: get jar
         uses: robinraju/release-downloader@v1.3
         with:
@@ -36,16 +46,6 @@ jobs:
           DOCKER_PASSWORD : ${{ secrets.DOCKER_PASSWORD }}
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-
-      - name: Clone repo
-        uses: actions/checkout@v2
-        with:
-          repository: ClassCompanion/discord-bot
-
-      - name: ls
-        run: |
-          ls -la
-          pwd
 
       - name: copy Dockerfile
         uses: canastro/copy-file-action@master
