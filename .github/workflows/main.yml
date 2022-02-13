@@ -45,7 +45,7 @@ jobs:
         uses: canastro/copy-file-action@master
         with:
           source: "Dockerfile"
-          target: "tobuild/Dockerfile"
+          target: "../tobuild/Dockerfile"
 
       - name: ls
         run: ls -la
