@@ -6,6 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: mkdir
+        run: mkdir tobuild
+
       - name: get jar
         uses: robinraju/release-downloader@v1.3
         with:
@@ -14,28 +17,34 @@ jobs:
           fileName: "classcompanion-discord-bot.jar"
           out-file-path: "tobuild/"
           token: ""
+
       - name: Get release tag
         uses: bruceadams/get-release@v1.2.3
         env:
           GITHUB_TOKEN: ${{ github.token }}
+
       - name: Docker login
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD : ${{ secrets.DOCKER_PASSWORD }}
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
       - name: Clone repo
         uses: actions/checkout@v2
         with:
           repository: ClassCompanion/discord-bot
+
       - name: Copy Dockerfile
         run: |
-          cp Dockerfile tobuild/Dockerfile
+          cp Dockerfile tobuild/
+
       - name: docker build
         env:
           TAGNAME: ${{ steps.get_release.outputs.tag_name }}
         run: |
           docker build tobuild/ --file tobuild/Dockerfile -t classcompanion/discord-bot:$TAGNAME
+
       - name: docker push
         env:
           TAGNAME: ${{ steps.get_release.outputs.tag_name }}
