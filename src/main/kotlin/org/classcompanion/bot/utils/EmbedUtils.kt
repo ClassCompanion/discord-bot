@@ -2,7 +2,7 @@ package org.classcompanion.bot.utils
 
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.entities.MessageEmbed
-import org.classcompanion.botlib.objects.Questioning
+import org.classcompanion.botlib.objects.Assesment
 import java.awt.Color
 
 
@@ -26,10 +26,10 @@ object EmbedUtils {
 		embed.setFooter("ClassCompanion", "https://avatars.githubusercontent.com/u/98977989?s=200&v=4")
 		return embed.build()
 	}
-	fun datesEmbed(q: Questioning, inline: Boolean = false, color: Color = Color.GREEN): MessageEmbed {
+	fun datesEmbed(q: Assesment, inline: Boolean = false, color: Color = Color.GREEN): MessageEmbed {
 		val embed = EmbedBuilder()
 
-		embed.setTitle(q.questioning)
+		embed.setTitle(q.assesmentName)
 		embed.setColor(color)
 		for ((datum, list) in q.dates) {
 			var fieldvalue = ""

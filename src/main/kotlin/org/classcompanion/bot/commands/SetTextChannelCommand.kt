@@ -15,7 +15,7 @@ class SetTextChannelCommand(private val bot: BotLib) : SlashCommand {
 		val interactionHook = event.hook
 		if (PermissionUtil.checkPermission(member, Permission.ADMINISTRATOR)) {
 			try {
-				bot.sendMessage("""{"messageType": "setdefaultchannel", "newDefaultChannel": "${event.channel}"}""")
+				bot.sendDefaultMessage(event.channel.id)
 				interactionHook.sendMessageEmbeds(EmbedUtils.basicTextEmbed("Success", "Default chat set successfully!", "", color = Color.GREEN))
 					.queue()
 			} catch (e: Error) {
