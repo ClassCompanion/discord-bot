@@ -6,7 +6,7 @@ import net.dv8tion.jda.api.entities.Activity
 import net.dv8tion.jda.api.interactions.commands.build.Commands
 import net.dv8tion.jda.api.utils.ChunkingFilter
 import org.classcompanion.bot.commands.SetTextChannelCommand
-import org.classcompanion.bot.consumes.AssesmentConsume
+import org.classcompanion.bot.consumes.AssessmentConsume
 import org.classcompanion.bot.managers.SlashCommandManager
 import org.classcompanion.botlib.BotLib
 
@@ -30,7 +30,7 @@ class Bot(token: String, guild: String, rabbitMqIP: String, channel: String) {
 
 		slashCommandManager.registerCommand("setdefaultchannel", SetTextChannelCommand(bot))*/
 
-		bot.setAssesmentsConsume(AssesmentConsume(bot, jda, channel))
+		bot.setAssesmentsConsume(AssessmentConsume(bot, jda, channel))
 	}
 }
 
