@@ -11,7 +11,7 @@ import org.classcompanion.bot.managers.SlashCommandManager
 import org.classcompanion.botlib.BotLib
 
 
-class Bot(token: String, guild: String, rabbitMqIP: String) {
+class Bot(token: String, guild: String, rabbitMqIP: String, channel: String) {
 	private val slashCommandManager: SlashCommandManager = SlashCommandManager()
 	private val jda: JDA
 	init {
@@ -24,13 +24,13 @@ class Bot(token: String, guild: String, rabbitMqIP: String) {
 		jda = builder.build()
 		jda.awaitReady()
 
-		jda.updateCommands().addCommands(
+		/*jda.updateCommands().addCommands(
 			Commands.slash("setdefaultchannel", "Set the default text channel")
 		)
 
-		slashCommandManager.registerCommand("setdefaultchannel", SetTextChannelCommand(bot))
+		slashCommandManager.registerCommand("setdefaultchannel", SetTextChannelCommand(bot))*/
 
-		bot.setAssesmentsConsume(AssesmentConsume(bot, jda))
+		bot.setAssesmentsConsume(AssesmentConsume(bot, jda, channel))
 	}
 }
 

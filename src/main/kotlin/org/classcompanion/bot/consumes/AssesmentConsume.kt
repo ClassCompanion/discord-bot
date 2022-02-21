@@ -12,19 +12,19 @@ import org.classcompanion.botlib.rabbitmq.OnConsume
 import java.nio.charset.Charset
 import java.util.function.Consumer
 
-class AssesmentConsume(private val bot: BotLib, private val jda: JDA): OnConsume {
+class AssesmentConsume(private val bot: BotLib, private val jda: JDA, private val channel: String): OnConsume {
 	override fun execute(delivery: Delivery, charset: Charset) {
 		val mapper = jacksonObjectMapper()
 		val q: Assesment = mapper.readValue(String(delivery.body, charset))
-		if (q.messageId == "") {
-			jda.getTextChannelById(q.channel)?.sendMessageEmbeds(/* embed = */ EmbedUtils.datesEmbed(q))
+		if (q.messageId == null) {
+			jda.getTextChannelById(channel)?.sendMessageEmbeds(/* embed = */ EmbedUtils.datesEmbed(q))
 				?.queue(Consumer { message: Message ->
 					val messageId = message.idLong
-					bot.sendMessageId(messageId, q.uuid)
+					bot.sendMessageId(messageId, q.id)
 				})
 		} else {
 			println(q.messageId)
-			jda.getTextChannelById(q.channel)?.editMessageEmbedsById(q.messageId, EmbedUtils.datesEmbed(q))?.queue()
+			jda.getTextChannelById(channel)?.editMessageEmbedsById(q.messageId, EmbedUtils.datesEmbed(q))?.queue()
 		}
 	}
 }
